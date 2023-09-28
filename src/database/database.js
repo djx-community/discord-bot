@@ -1,8 +1,8 @@
-require('dotenv').config()
 const mongoose = require('mongoose')
+const {mongo_uri} = require('../../config.json')
 
 const connectDb = async () => {
-    const connection = await mongoose.connect(process.env.mongo_uri?process.env.mongo_uri:"")
+    const connection = await mongoose.connect(mongo_uri)
     switch(connection.connection.readyState){
         case 0: console.log(`Connection to database failed`); break
         case 1: console.log(`Connection to databse successful`); break
