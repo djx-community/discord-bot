@@ -1,9 +1,6 @@
 const { SlashCommandBuilder } = require('discord.js');
-const { userModel } = require('../schema.js')
-
-const GUEST_ROLE_ID = '1156849097513381969';
-const VERIFIED_ROLE_ID = '1156849206254903296'
-const VERIFY_LOG_CHANNELID = '1156850191543046165'
+const { userModel } = require('../database/schema')
+const {GUEST_ROLE_ID,VERIFIED_ROLE_ID,VERIFY_LOG_CHANNELID} = require('../../config.json')
 
 module.exports = {
     data: new SlashCommandBuilder()

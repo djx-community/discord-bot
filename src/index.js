@@ -1,10 +1,9 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const { Client, Collection, Events, GatewayIntentBits } = require('discord.js');
-const { token } = require('../config.json');
-const { connectDb } = require('./db');
+const { token,GUEST_ROLE_ID} = require('../config.json');
+const { connectDb } = require('./database/database');
 
-const GUEST_ROLE_ID = '1156849097513381969'  
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds,GatewayIntentBits.GuildMembers] });
 client.commands = new Collection();
