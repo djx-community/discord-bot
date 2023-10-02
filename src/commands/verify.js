@@ -15,7 +15,7 @@ module.exports = {
 
             let userData = await userModel.findOne({ discordId: interaction.member.user.id })
             if(!userData){
-                return   interaction.reply({ content: `Please register before verifying https://djx-community.vercel.app/`,ephemeral:true });
+                return   interaction.reply({ content: `Please register before verifying https://djx-community.vercel.app/?discordId=${interaction.member.user.id}`,ephemeral:true });
             }
             const verified_role = interaction.guild.roles.cache.get(VERIFIED_ROLE_ID)
             const guest_role = interaction.guild.roles.cache.get(GUEST_ROLE_ID)
